@@ -6,9 +6,9 @@ if (true) {
   var c = 30;
 }
 
-console.log(a);
+console.log(a); // 300
 // console.log(b); tey are out of scope
-console.log(c);
+console.log(c); // 30
 
 function one() {
   const userName = "Chetan";
