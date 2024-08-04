@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dom</title>
+  </head>
+  <body style="background-color: #212121; color: rgb(195, 195, 195)">
+    <ul class="language">
+      <li>Java Script</li>
+    </ul>
+  </body>
+
+  <script>
+    // Add the elements
+    function addLanguage(lang) {
+      const li = document.createElement("li");
+      li.innerText = lang;
+
+      document.querySelector(".language").append(li);
+    }
+
+    addLanguage("python");
+    addLanguage("type script");
+
+    function addOptiLanguage(lang) {
+      const li = document.createElement("li");
+      li.appendChild(document.createTextNode(lang));
+      document.querySelector(".language").append(li);
+    }
+
+    addOptiLanguage("go lang");
+
+    // Edit
+
+    const secondLang = document.querySelector("li:nth-child(2)");
+    // secondLang.innerHTML = "rust";
+
+    const newli = document.createElement("li");
+    newli.textContent = "Java";
+    secondLang.replaceWith(newli);
+
+    // Edit
+
+    const firstLang = document.querySelector("li:first-child");
+    firstLang.outerHTML = "<li>typescript</li>";
+
+    // remove
+
+    const lastLang = document.querySelector("li:last-child");
+    lastLang.remove();
+  </script>
+</html>
