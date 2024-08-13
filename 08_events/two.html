@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML Events</title>
+  </head>
+  <body style="background-color: #414141; color: aliceblue">
+    <h1>Getting Better</h1>
+    <button id="stop">STOP</button>
+  </body>
+
+  <script>
+    const sayChetan = () => {
+      console.log("Chetan");
+    };
+    const changeText = () => {
+      document.querySelector("h1").innerHTML = "Working Harder!!";
+    };
+
+    const changeMe = setTimeout(changeText, 2000);
+
+    // we use setTimeout to set the callback after the time out but we also have clear timeout which removes the timeout form the call stack .
+
+    document.querySelector("#stop").addEventListener("click", function () {
+      clearTimeout(changeMe);
+      console.log("STOPPED");
+    });
+  </script>
+</html>

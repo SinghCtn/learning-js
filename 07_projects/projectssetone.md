@@ -166,3 +166,60 @@ function newGame() {
   });
 }
 ```
+
+## Project 5
+
+```javascript
+const insert = document.getElementById("insert");
+
+window.addEventListener("kewdown", function (e) {
+  insert.innerHTML = `<table>
+    <tr>
+      <th>Key</th>
+      <th>KeyCode</th>
+      <th>Code</th>
+    <tr>
+    <tr>
+      <td>${e.key}</td>
+      <td>${e.keyCode}</td>
+      <td>${e.code}</td>
+    </tr>
+  </table>`;
+});
+```
+
+## Project 6
+
+```javascript
+// generate random color
+
+const randomColor = function () {
+  const hex = "0123456789ABCDEF";
+  let color = "#";
+  for (let i = 0; i < 6; i++) {
+    color = color + hex[Math.floor(Math.random() * 16)];
+  }
+  return color;
+};
+
+const start = document.getElementById("start");
+const stop = document.getElementById("stop");
+
+let intervalId;
+
+const startChangingColor = function () {
+  if (!intervalId) {
+    intervalId = setInterval(function () {
+      document.body.style.backgroundColor = randomColor();
+    }, 1000);
+  }
+};
+
+start.addEventListener("click", startChangingColor);
+
+stop.addEventListener("click", function () {
+  clearInterval(intervalId);
+  intervalId = null;
+  //   this is done in order to prevent overwriting and make code better
+});
+```
